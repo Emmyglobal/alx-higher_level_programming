@@ -1,4 +1,3 @@
 #!/usr/bin/python3
-import string
-letters = string.ascii_lowercase
-print(letters)
+for letters in range(97,123):
+    print(f"{chr(letters)}", end = "")
