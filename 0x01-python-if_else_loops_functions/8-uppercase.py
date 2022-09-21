@@ -3,4 +3,4 @@ def uppercase(str):
     check = ord(str)
     for i in str:
         if(check >= 97) and (check <= 122):
-            print("{}".format(i))
+            print("{}".format(str))
