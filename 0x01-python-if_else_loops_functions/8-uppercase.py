@@ -2,5 +2,5 @@
 def uppercase(str):
     check = ord(str)
     for i in str:
-        if(check >= 97) and (check <= 122):
+        if(check >= 65) and (check <= 90):
             print("{}".format(str))
