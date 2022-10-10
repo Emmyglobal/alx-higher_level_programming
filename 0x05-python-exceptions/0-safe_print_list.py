@@ -6,6 +6,6 @@
 def safe_print_list(my_list=[], x=0):
     try:
         for x in my_list:
-            print("{}".format(x), end="")
-    except:
+            print("{}".format(my_list[x]), end="")
+    except (ValueError, TypeError):
         return(x)
