@@ -5,12 +5,14 @@
 
 def safe_print_list(my_list=[], x=0):
     n = 0
-    for n in my_list:
-        x += 1
+    for j in my_list:
+        n += 1
 
     try:
-        for x in my_list:
-            print(my_list[x], end="")
+        for k in range(x):
+            print(my_list[k], end="")
+        print()
+        return x
     except (IndexError):
         print()
-        return(x)
+        return n
