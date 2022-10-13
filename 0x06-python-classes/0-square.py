@@ -1,13 +1,9 @@
 #!/usr/bin/python3
-"""
-A ppytjon program to demonstrate class
-"""
+# 0-square.py
+# ikeji chiagozie @ alx-school
+"""Define a class Square."""
 
 
 class Square:
-    """
-    An empty class called square
-    """
+    """Represent a square."""
     pass
-Footer
-© 2022 GitHub, Inc.
