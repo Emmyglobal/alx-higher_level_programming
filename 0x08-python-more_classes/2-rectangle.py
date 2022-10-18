@@ -9,7 +9,6 @@ class Rectangle:
     that has value
     '''
 
-
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -20,12 +19,12 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        if type(self.width) is not int:
-            raise TypeError
-        elif self.width < 0:
-            raise ValueError
+        if type(self.__width) != int:
+            raise TypeError("width must be an integer")
+        elif self.__width < 0:
+            raise ValueError("width must be >= 0")
         else:
-            return self.width
+            return self.__width
 
     @property
     def height(self)
@@ -33,10 +32,10 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        if type(self.height) is not int:
-            raise TypeError
-        elif self.height < 0:
-            raise ValueError
+        if type(self.__height) != int:
+            raise TypeError("height must be an integer")
+        elif self.__height < 0:
+            raise ValueError("height must be >= 0")
     def area(self,value):
         self.area = self.width * self.height
         return self.area
