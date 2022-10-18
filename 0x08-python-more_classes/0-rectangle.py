@@ -2,8 +2,6 @@
 '''
 a python class
 '''
-
-
 class Rectangle:
 	'''
 	it has no value
