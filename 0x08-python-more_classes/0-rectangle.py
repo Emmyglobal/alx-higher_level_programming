@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-'''
-a python class
-'''
+'''a python class'''
 class Rectangle:
-	'''
-	it has no value
-	'''
+	'''it has no value'''
 	pass
