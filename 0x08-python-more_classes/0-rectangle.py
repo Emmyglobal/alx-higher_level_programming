@@ -3,5 +3,8 @@
 
 
 class Rectangle:
-'''it has no value'''
-	pass
+    '''
+it has no value
+    '''
+
+    pass
