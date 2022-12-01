@@ -1,5 +1,2 @@
-Database
-information_schema
-mysql
-performance_schema
-sys
+--Script that List all databases
+SHOW DATABASES;
