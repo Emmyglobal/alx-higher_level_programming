@@ -1,1 +1,1 @@
-This is the begining of database at ALX school. This folder contains the introduction
+This folder contains the file for the introduction of SQL
