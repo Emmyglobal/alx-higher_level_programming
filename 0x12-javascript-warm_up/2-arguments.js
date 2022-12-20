@@ -1,13 +1,11 @@
 #!/usr/bin/node
 
-let argument;
-
-if (argument == null){
-	console.log('No argument');
+if (process.argv[3]){
+	console.log('Arguments found');
 }
-else if(argument == 1){
+else if(process.argv[2]){
 	console.log('Argument found');
 }
 else{
-	console.log('Arguments found');
+	console.log('No argument');
 }
