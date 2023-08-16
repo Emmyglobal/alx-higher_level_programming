@@ -1,13 +1,8 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    from sys import argv
-    length = len(argv) - 1
-    sum1 = 0
-    i = 1
-    if (length == 0):
-        print("{}".format(sum1))
-    else:
-        while i <= length:
-            sum1 += int(argv[i])
-            i += 1
-        print("{}".format(sum1))
+if __name__ == '__main__':
+    import sys
+    num_par = len(sys.argv) - 1
+    sum = 0
+    for i in range(num_par):
+        sum += int(sys.argv[i + 1])
+    print("{}".format(sum))
