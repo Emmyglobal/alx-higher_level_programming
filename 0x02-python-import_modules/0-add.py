@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 if __name__ == '__main__':
     from add_o import add
     a = 1
