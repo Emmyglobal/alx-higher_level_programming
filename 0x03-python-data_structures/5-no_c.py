@@ -3,6 +3,8 @@
 
 
 def no_c(my_string):
-    for i in range(len(my_string)-1):
-        if my_string[i] == 99 or my_string[i] == 67:
-            return del my_string[i]
+    copy_str = []
+    for i in my_string:
+        if (i != 'c') and (i != 'C'):
+            copy_str.append(i)
+    return "".join(copy_str)
