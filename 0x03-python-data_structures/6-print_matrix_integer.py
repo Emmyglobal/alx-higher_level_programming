@@ -3,6 +3,5 @@
 
 
 def print_matrix_integer(matrix=[[]]):
-    for i in range(len(matrix) - 1):
-        for j in range(len(matrix) - 1):
+    for i in range(len(matrix) - 1:
             print("{}".format(matrix[i]))
