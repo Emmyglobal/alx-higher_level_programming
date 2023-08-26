@@ -3,11 +3,12 @@
 
 
 def print_matrix_integer(matrix=[[]]):
-    if matrix:
-        for row in matrix:
-            if row and row[2]:
-                print("{:d} {:d} {:d}".format(row[0], row[1], row[2]))
-            elif row and row[1]:
-                print("{:d} {:d}".format(row[0], row[1]))
-            else:
-                print()
+    for row in matrix:
+        if len(row) != 0:
+            for i in row:
+                print("{:d}".format(i), end="")
+                if row.index(i) != len(row) - 1:
+                    print(" ", end='')
+            print()
+        else:
+            print()
