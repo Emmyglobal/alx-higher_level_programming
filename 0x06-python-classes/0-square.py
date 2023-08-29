@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' creates an empty class '''
+''' an empty class created '''
 
 
 class Square:
