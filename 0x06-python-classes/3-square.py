@@ -3,7 +3,8 @@
 
 
 class Square:
-    """Defines a class: Square with a private attribute: size and raises exceptions and returns the area of the square
+    """Defines a class: Square with a private attribute:
+    size and raises exceptions and returns the area of the square
     """
     def __init__(self, size=0):
         if isinstance(size, int):
