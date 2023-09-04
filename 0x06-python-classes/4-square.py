@@ -4,7 +4,8 @@
 
 class Square:
     """Defines a class: Square with a private attribute:
-    size and raises exceptions and returns the area of the square @property and setter
+    size and raises exceptions and returns the area of
+    the square @property and setter
     """
     def __init__(self, size=0):
         self.size = size
@@ -22,5 +23,5 @@ class Square:
             self.__size = size
         else:
             raise TypeError("size must be an integer")
-        if value < 0:
-            raise valueError("size must be >= 0")
+        if size < 0:
+            raise ValueError("size must be >= 0")
