@@ -19,7 +19,7 @@ class Square:
         else:
             for i in range(pow(self.__size, 2)):
                 if (i % self.__size == 0) and (i != 0):
-                    print("\n")
+                    print()
                 print("#", end="")
         print()
 
