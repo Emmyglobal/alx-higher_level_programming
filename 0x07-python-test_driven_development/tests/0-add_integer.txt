@@ -1,0 +1,36 @@
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(2, -5)
+-3
+
+>>> add_integer(4, -4.5)
+-1.5
+
+>>> add_integer(2)
+100
+
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer missing 1 required positional argument: 'a'
+
+>>> add_integer((1, 2), 4)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(4, 'stress')
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(float('inf'), b)
+Traceback (most recent call last):
+OverflowError: ...
+
+>>> add_integer(float('NaN'))
+Traceback (most recent call last):
+ValueError: ...
