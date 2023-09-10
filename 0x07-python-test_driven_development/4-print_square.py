@@ -14,7 +14,7 @@ def print_square(size):
         pass
     else:
         for i in range(size ** 2):
-            if i and not(i % size):
+            if i and not (i % size):
                 print()
             print(f'#', end="")
         print()
