@@ -1,0 +1,17 @@
+The "5-text_indentation" module
+===============================
+
+>>> text = __import__('5-text_indentation').text_indentation
+
+>>> text("Hello.Boy:Trust you?")
+Hello.
+<BLANKLINE>
+Boy:
+<BLANKLINE>
+Trust you?
+<BLANKLINE>
+
+>>> text(1009877654356789998766644568908665776278)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
