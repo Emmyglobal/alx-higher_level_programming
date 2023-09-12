@@ -1,0 +1,35 @@
+The ``1-my_list`` module
+==================================
+
+Using ``MyList``
+-----------------------------------
+
+``MyList`` from the ``1-my_list`` module:
+
+>>> Mlist = __import__('1-my_list').MyList
+
+>>> listA = MyList()
+
+>>> type(listA)
+<class '1-my_list.MyList'>
+
+>>> issubclass(MyList, list)
+True
+
+>>> listA.print_sorted()
+[]
+[]
+
+>>> listA.append(2)
+>>> listA.append(1)
+>>> listA.append(3)
+>>> listA.append(4)
+
+>>> print(listA)
+[2, 1, 3, 4]
+
+>>> listA.print_sorted()
+[1, 2, 3, 4]
+[1, 2, 3, 4]
+
+>>> listB = MyList([1, 2, 6, -3])
