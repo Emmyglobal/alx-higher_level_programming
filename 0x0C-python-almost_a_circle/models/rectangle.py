@@ -6,7 +6,7 @@ from models.base import Base
 class Rectangle(Base):
     """The first constructor of the class """
     def __init__(self, width, height, x=0, y=0, id=None):
-        super().__init__(id) #call the supperclass constructor
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
@@ -21,7 +21,7 @@ class Rectangle(Base):
             if not isinstance(value, int):
                 raise TypeError("width must be an integer")
             if value <= 0:
-                raise ValueError("Width must be greater than 0")
+                raise ValueError("Width must be > 0")
             self.__width = value
 
         @property
@@ -33,8 +33,8 @@ class Rectangle(Base):
             if not isinstance(value, int):
                 raise TypeError("height must be an integer")
             if value <= 0:
-                raise ValueError('height must be greater than 0')
-            self.height = value
+                raise ValueError('height must be > 0')
+            self.__height = value
 
         @property
         def x(self):
@@ -62,12 +62,6 @@ class Rectangle(Base):
 
         def area(self):
             return self.width * self.height
-
-        def display(self):
-            for _ in range(self.y):
-                print()
-            for _ in range(self.height):
-                print(" " * self.x + "#" * self.width)
 
         def __str__(self):
             return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
