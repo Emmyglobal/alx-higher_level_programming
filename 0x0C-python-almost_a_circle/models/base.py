@@ -4,9 +4,8 @@
 
 class Base:
     """The base class with the init method including setter and getter"""
-    __nb_objects = 0
 
-    """A class constructor"""
+    __nb_objects = 0
 
     def __init__(self, id=None):
         if id is not None:
