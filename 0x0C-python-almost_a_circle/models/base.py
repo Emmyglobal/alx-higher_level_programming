@@ -11,6 +11,10 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """
+        Initialization of the class
+        Args: id
+        """
         if id is not None:
             self.id = id
         else:
