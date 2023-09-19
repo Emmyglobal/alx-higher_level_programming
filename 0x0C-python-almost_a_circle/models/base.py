@@ -3,6 +3,7 @@
 
 
 class Base:
+    """The base class with the init method including setter and getter"""
     __nb_objects = 0
 
     """A class constructor"""
