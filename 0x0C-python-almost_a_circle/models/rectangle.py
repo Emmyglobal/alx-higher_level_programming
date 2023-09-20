@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-from models.base import Base
 """
 A class that inherits from Base class with other methods
+The rectangle depends on the base class for its id
 """
+from models.base import Base
 
 
 class Rectangle(Base):
