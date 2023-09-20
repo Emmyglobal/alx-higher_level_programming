@@ -35,6 +35,7 @@ class Rectangle(Base):
         this method returns the width of the rectangle.
         Args:
             value: sets the value for the width.
+        Return width of the rectangle
         """
         return self.__width
 
@@ -53,6 +54,7 @@ class Rectangle(Base):
         This method returns the height of the rectangle.
         Args:
             value: sets value for the height.
+        Return height of the rectangle
         """
         return self.__height
 
@@ -71,6 +73,7 @@ class Rectangle(Base):
         This is the getter for the x-axis
         Args:
             value: sets value for x axis
+        Return x of the rectangle
         """
         return self.__x
 
@@ -89,6 +92,7 @@ class Rectangle(Base):
         This is the method for the y-axis
         Args:
             value: sets the value of y
+        Return y of the rectangle
         """
         return self.__y
 
@@ -101,8 +105,15 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """
+        Calculates the area of the rectangle
+        Returns the area
+        """
         return self.width * self.height
 
     def __str__(self):
+        """
+        Returns the string representation of an object
+        """
         return (f"[Rectangle] ({self.id})"
                 f" {self.x}/{self.y} - {self.width}/{self.height}")
