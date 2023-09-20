@@ -7,7 +7,9 @@ A class that inherits from Base class with other methods
 
 class Rectangle(Base):
     """
-    The first constructor of the class
+    This is a simple rectangle class
+    This class inherits from the base class
+    and relies on the base class for the validation of its id.
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
@@ -30,6 +32,8 @@ class Rectangle(Base):
             """
             This is the getter of the width variable
             this method returns the width of the rectangle.
+            Args:
+                value: sets the value for the width.
             """
             return self.__width
 
@@ -44,7 +48,10 @@ class Rectangle(Base):
         @property
         def height(self):
             """
+            This is a getter of the height variable.
             This method returns the height of the rectangle.
+            Args:
+                value: sets value for the height.
             """
             return self.__height
 
@@ -59,7 +66,10 @@ class Rectangle(Base):
         @property
         def x(self):
             """
+            This is a getter of the x-axis.
             This is the getter for the x-axis
+            Args:
+                value: sets value for x axis
             """
             return self.__x
 
@@ -74,7 +84,10 @@ class Rectangle(Base):
         @property
         def y(self):
             """
+            This is a getter of the y variable.
             This is the method for the y-axis
+            Args:
+                value: sets the value of y
             """
             return self.__y
 
