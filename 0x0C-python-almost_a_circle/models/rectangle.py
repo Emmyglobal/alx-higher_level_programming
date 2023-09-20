@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 from models.base import Base
-"""A class that inherits from Base"""
+"""
+A class that inherits from Base class with other methods
+"""
 
 
 class Rectangle(Base):
@@ -64,4 +66,5 @@ class Rectangle(Base):
             return self.width * self.height
 
         def __str__(self):
-            return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+            return (f"[Rectangle] ({self.id})"
+                    f" {self.x}/{self.y} - {self.width}/{self.height}")
