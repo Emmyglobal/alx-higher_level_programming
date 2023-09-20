@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-"""the first class"""
+"""
+Creating the first class which is the base class
+"""
 
 
 class Base:
     """
-    Args:
+    Args: id
     The base class with the init method including setter and getter
     """
 
@@ -20,9 +22,3 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-
-    def set_id(self, id):
-        self.id = id
-
-    def get_id(self):
-        return self.id
