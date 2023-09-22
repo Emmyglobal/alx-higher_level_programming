@@ -119,7 +119,7 @@ class Rectangle(Base):
         for val_y in range(self.y):
             print()
         for val in range(self.height):
-            print(f"" * self.x + "#" * self.width)
+            print(f" " * self.x + "#" * self.width)
 
     def __str__(self):
         """
