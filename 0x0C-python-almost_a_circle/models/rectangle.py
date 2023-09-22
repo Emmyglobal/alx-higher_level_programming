@@ -111,6 +111,14 @@ class Rectangle(Base):
         """
         return self.width * self.height
 
+    def display(self):
+        """
+        displays the area in form of a rectangle
+        using #
+        """
+        for val in range(self.height):
+            print(f"#" * self.width)
+
     def __str__(self):
         """
         Returns the string representation of an object
