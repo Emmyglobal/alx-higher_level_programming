@@ -28,6 +28,54 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def update(self, *args, **kwargs):
+        """Updating instance attributes using postional args
+            and keyword arguments
+        """
+        if len(args) != 0:
+            try:
+                self.id = args[0]
+            except IndexError:
+                pass
+            try:
+                self.__width = args[1]
+            except IndexError:
+                pass
+            try:
+                self.__height = args[2]
+            except IndexError:
+                pass
+            try:
+                self.x = args[3]
+            except IndexError:
+                pass
+            try:
+                self.y = args[4]
+            except IndexError:
+                pass
+        else:
+            try:
+                self.id = kwargs["id"]
+            except KeyError:
+                pass
+            try:
+                self.__width = kwargs["width"]
+            except KeyError:
+                pass
+            try:
+                self.__height = kwargs["height"]
+            except KeyError:
+                pass
+            try:
+                self.x = kwargs["x"]
+            except KeyError:
+                pass
+            try:
+                self.y = kwargs["y"]
+            except KeyError:
+                pass
+
+
     @property
     def width(self):
         """
