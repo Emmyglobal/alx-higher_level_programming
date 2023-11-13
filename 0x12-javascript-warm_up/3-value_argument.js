@@ -1,9 +1,8 @@
 #!/usr/bin/node
-/* prints a message depending of the number of arguments passed: */
+/* script that prints the first argument passed to it */
 
 const args = process.argv;
-const i = args.length;
-if (i === 2) {
+if (args.length === 2) {
   console.log('No argument');
 } else {
   console.log(args[2]);
