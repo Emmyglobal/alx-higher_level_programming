@@ -1,5 +1,5 @@
 #!/usr/bin/node
-/* script that prints the first argument passed to it */
+/* script tht prints the first argument passed to it */
 
 const args = process.argv;
 if (args.length === 2) {
