@@ -2,8 +2,8 @@
 /*  prints My number: <first argument converted in integer> */
 
 const args = process.argv;
-if (typeof args[2] === 'number') {
-  parseInt(args[2], 10);
+const x = parseInt(args[2]);
+if (x) {
   console.log('My number: ' + args[2]);
     }
 else {
