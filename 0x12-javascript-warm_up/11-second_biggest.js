@@ -3,8 +3,8 @@
 
 const args = process.argv.slice(2).map(Number);
 const sorted = args.sort((a, b) => a - b);
-if (args == false || args.length == 1) {
-	console.log(0);
+if (args === false || args.length === 1) {
+  console.log(0);
 } else {
-	console.log(sorted[args.length - 2]);
+  console.log(sorted[args.length - 2]);
 }
