@@ -1,6 +1,6 @@
 #!/usr/bin/node
-/* Executes x times a function */
+/* increments and calls a function */
 
 exports.addMeMaybe = function (number, theFunction) {
-    theFunction(number++);
+    theFunction(++number);
 };
