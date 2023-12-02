@@ -21,5 +21,7 @@ try:
             print(request_id)
         else:
             print("X-Request-Id not found in the response headers.")
+except urllib.error.HTTPError as e:
+    print(f"HTTPError: {e.code} - {e.reason}")
 except urllib.error.URLError as e:
     print(f"Failed to fetch data. Error: {e}")
