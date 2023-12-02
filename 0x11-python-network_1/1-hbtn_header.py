@@ -18,7 +18,7 @@ try:
     with urllib.request.urlopen(url) as response:
         if 'X-Request-Id' in response.headers:
             request_id = response.headers['X-Request-Id']
-            print("X-Request-Id:", request_id)
+            print(request_id)
         else:
             print("X-Request-Id not found in the response headers.")
 except urllib.error.URLError as e:
