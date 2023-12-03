@@ -9,7 +9,7 @@ import sys
 
 
 if __name__ == "__main__":
-    url = sys.argv[1]
+    url = urllib.request.Request(sys.argv[1])
     try:
         with urllib.request.urlopen(url) as response:
             if 'X-Request-Id' in response.headers:
