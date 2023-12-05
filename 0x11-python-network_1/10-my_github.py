@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Script that takes my Github credentials and uses the GitHub API to display my id
+Script that takes my Github credentials and uses
+the GitHub API to display my id
 """
 
 import requests
