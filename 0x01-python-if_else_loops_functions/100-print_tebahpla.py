@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" Prints the ASCII alphabet, in reverse order, alternating lowercase and uppercase"""
+""" Prints the ASCII alphabet, in reverse order, 
+alternating lowercase and uppercase"""
 
 for i in range(122, 97 - 1, -1):
     if (i % 2) != 0:
