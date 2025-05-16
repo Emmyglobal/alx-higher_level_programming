@@ -6,5 +6,5 @@ if __name__ == "__main__":
     sums = 0
     for i in range(1, count):
        sums += int(arg[i])
-
     print(sums)
+
