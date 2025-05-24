@@ -1,9 +1,7 @@
-#!/usr/bin/python3
-# A Function that adds all unique integers in a list
-# (only once for each integer).
-
+#!/user/bin/python3
 def uniq_add(my_list=[]):
+    mat = set(my_list)
     sum = 0
-    for i in set(my_list):
+    for i in mat:
         sum += i
-    return(sum)
+    return sum

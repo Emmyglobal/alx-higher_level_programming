@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-# A Function that replaces all occurrences of an element by
-# another in a new list.
-
 def search_replace(my_list, search, replace):
-    new_list = my_list[:]
-
-    for i in range(len(new_list)):
-        if new_list[i] == search:
-            new_list[i] = replace
-    return(new_list)
+    new = []
+    for i in range(len(my_list)):
+        if my_list[i] == search:
+            new.append(replace)
+        else:
+            new.append(my_list[i])
+    return new
