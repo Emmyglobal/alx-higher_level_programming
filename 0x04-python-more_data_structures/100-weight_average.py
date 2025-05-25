@@ -9,5 +9,4 @@ def weight_average(my_list=[]):
         multiplyAndSum += (x * y)
         denominator += y
     res = multiplyAndSum / denominator
-    return res
-        
+    return res   
