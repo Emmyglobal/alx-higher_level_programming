@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""a class BaseGeometry with public instance"""
+"""class BaseGeometry with public instance method"""
 
 
 class BaseGeometry:
-    """a class with public instance"""
+    """public class method area"""
     def area(self):
-        raise Exception('area() is not implemented')
+        raise Exception("area() is not implemented")
