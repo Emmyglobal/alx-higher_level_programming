@@ -5,7 +5,7 @@
 def pascal_triangle(n):
     """Returns a paschal's triangle"""
     my_list = [[1]]
-    if n < 0:
+    if n <= 0:
         return []
     else:
         for i in range(1, n):
