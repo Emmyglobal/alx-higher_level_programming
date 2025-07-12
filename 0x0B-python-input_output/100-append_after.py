@@ -15,7 +15,5 @@ def append_after(filename="", search_string="", new_string=""):
         if search_string in i:
             my_word_list.append(new_string)
 
-    print(my_word_list)
-
     with open(filename, "w", encoding="utf-8") as f:
         f.writelines(my_word_list)
