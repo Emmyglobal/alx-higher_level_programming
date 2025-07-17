@@ -27,7 +27,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.x, 7)
         self.assertEqual(r.y, 8)
 
-    def test_valid_initialization():
+    def test_valid_initialization(self):
         r = Rectangle(10, 20, 1, 2, 99)
         assert r.width == 10
         assert r.height == 20
@@ -35,14 +35,59 @@ class TestRectangle(unittest.TestCase):
         assert r.y == 2
         assert r.id == 99
 
-    def test_valid_default_xy():
+    def test_valid_default_xy(self):
         r = Rectangle(5, 6)
         assert r.x == 0
         assert r.y == 0
 
-    def test_invalid_width_type():
+    def test_invalid_width_type(self):
         try:
-            Rectangle
+            Rectangle("10", 20, 1, 2)
+        except TypeError as e:
+            assert str(e) == "width must be an integer"
+
+    def test_invalid_width_value(self):
+        try:
+            Rectangle(0, 20, 1, 2)
+        except ValueError as e:
+            assert str(e) == "width must be > 0"
+
+    def test_invalid_height_type(self):
+        try:
+            Rectangle(10, "20", 1, 2)
+        except TypeError as e:
+            assert str(e) == "height must be an integer"
+
+    def tet_invalid_height_value(self):
+        try:
+            Rectangle(10, -1, 1, 2)
+        except valueError as e:
+            assert str(e) == "height must be > 0"
+
+    def test_invalid_x_type(self):
+        try:
+            Rectangle(10, 20, x="1", y=4)
+        except TypeError as e:
+            assert str(e) == "x must be an integer"
+
+    def test_invalid_x_value(self):
+        try:
+            Rectangle(10, 20, x=-1, y=2)
+        except ValueError as e:
+            assert str(e) == "x must be >= 0"
+
+    def test_invalid_y_type(self):
+        try:
+            Rectangle(10, 20, 0, "2")
+        except TypeError as e:
+            assert str(e) == "y must be an integer"
+
+    def test_invalid_y_value(self):
+        try:
+            Rectangle(10, 20, 1, -2)
+        except ValueError as e:
+            assert str(e) == "y must be >= 0"
+        
 
 if __name__ == '__main__':
     unittest.main()
