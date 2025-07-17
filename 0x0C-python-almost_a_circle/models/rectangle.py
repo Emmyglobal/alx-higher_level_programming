@@ -12,6 +12,20 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
+    
+    @staticmethod
+    def __validate_positive_integer(name, value):
+        if not isinstance(value, int):
+            raise TypeError(f"{name} must be an integer")
+        if value <= 0:
+            raise ValueError(f"{name} must be > 0")
+
+    @staticmethod
+    def __validate_neg_int(name, value):
+        if not isinstance(value, int):
+            raise TypeError(f"{name} must be an integer")
+        if value < 0:
+            raise ValueError(f"{name}, must be >= 0")
 
     @property
     def width(self):
@@ -19,6 +33,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
+        self.__validate_positive_integer("width", value)
         self.__width = value
 
     @property
@@ -27,6 +42,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
+        self.__validate_positive_integer("height", value)
         self.__height = value
 
     @property
@@ -35,6 +51,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        self.__validate_neg_int("x", value)
         self.__x = value
 
     @property
@@ -43,5 +60,6 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
+        self.__validate_neg_int("y", value)
         self.__y = value
 

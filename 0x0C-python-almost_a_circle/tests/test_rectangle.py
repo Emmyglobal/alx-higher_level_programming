@@ -27,5 +27,22 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.x, 7)
         self.assertEqual(r.y, 8)
 
+    def test_valid_initialization():
+        r = Rectangle(10, 20, 1, 2, 99)
+        assert r.width == 10
+        assert r.height == 20
+        assert r.x == 1
+        assert r.y == 2
+        assert r.id == 99
+
+    def test_valid_default_xy():
+        r = Rectangle(5, 6)
+        assert r.x == 0
+        assert r.y == 0
+
+    def test_invalid_width_type():
+        try:
+            Rectangle
+
 if __name__ == '__main__':
     unittest.main()
