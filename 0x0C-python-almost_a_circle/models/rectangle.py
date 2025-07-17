@@ -72,3 +72,9 @@ class Rectangle(Base):
         """prnts area to te standard output"""
         for i in range(self.height):
             sys.stdout.write("#" * self.width + "\n")
+
+    def __str__(self):
+        """returns Rectangle string"""
+        t = self.width
+        m = self.height
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {t}/{m}"
