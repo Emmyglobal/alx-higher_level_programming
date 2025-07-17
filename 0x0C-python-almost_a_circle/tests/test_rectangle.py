@@ -87,6 +87,10 @@ class TestRectangle(unittest.TestCase):
             Rectangle(10, 20, 1, -2)
         except ValueError as e:
             assert str(e) == "y must be >= 0"
+
+    def test_area(self):
+        r = Rectangle(3, 2)
+        self.assertEqual(r.area(), 6)
         
 
 if __name__ == '__main__':

@@ -63,3 +63,5 @@ class Rectangle(Base):
         self.__validate_neg_int("y", value)
         self.__y = value
 
+    def area(self):
+        return self.width * self.height
