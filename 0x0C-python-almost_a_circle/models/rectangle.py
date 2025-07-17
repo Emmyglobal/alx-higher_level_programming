@@ -70,7 +70,10 @@ class Rectangle(Base):
 
     def display(self):
         """prnts area to te standard output"""
+        for _ in range(self.y):
+            sys.stdout.write("\n")
         for i in range(self.height):
+            sys.stdout.write(" " * self.x)
             sys.stdout.write("#" * self.width + "\n")
 
     def __str__(self):
@@ -78,3 +81,14 @@ class Rectangle(Base):
         t = self.width
         m = self.height
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {t}/{m}"
+
+    def update(self, *args, **kwargs):
+        """updates the Rectangle by adding the public method"""
+        attr = ["id", "width", "height", "x", "y"]
+        for i in range(len(args)):
+            if i < len(attr):
+                setattr(self, attr[i], args[i])
+
+        if not args:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
