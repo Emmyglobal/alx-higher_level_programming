@@ -3,6 +3,8 @@
     manage id attributes and avoid duplicating the same code
 """
 import json
+import csv
+import turtle
 
 
 class Base:
@@ -68,3 +70,72 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except FileNotFoundError:
             return "[]"
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes in CSV"""
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline="") as csvfile:
+            if list_objs is None or list_objs == []:
+                csvfile.write("")
+            else:
+                writer = csv.writer(csvfile)
+                for obj in list_objs:
+                    if cls.__name__ == "Rectangle":
+                        writer.writerow([obj.id, obj.width, obj.height\
+                                , obj.x, obj.y])
+                    elif cls.__name__ == "Square":
+                        writer.writerow([obj.id, obj.size, obj.x,\
+                                obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes CSV file to a list of instances."""
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "r", newline="") as csvfile:
+                reader = csv.reader(csvfile)
+                instances = []
+                for row in reader:
+                    row = [int(x) for x in row]
+                    if cls.__name__ == "Rectangle":
+                        obj = cls.create(id=row[0], width=row[1],\
+                                height=row[2], x=row[3], y=row[4])
+                    elif cls.__name__ == "Square":
+                        obj = cls.create(id=row[0], size=row[1],\
+                                x=row[2], y=row[3])
+                    instances.append(obj)
+                return instances
+        except FileNotFoundError:
+            return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """opens a window and draws all the Rectangle and Squares"""
+        screen = turtle.Screen()
+        screen.bgcolor("white")
+        pen = turtle.Turtle()
+        pen.pensize(2)
+        pen.speed(1)
+
+        def draw_shape(pen, x, y, width, height, color):
+            pen.penup()
+            pen.goto(x, y)
+            pen.pendown()
+            pen.color(color)
+            pen.begin_fill()
+            for _ in range(2):
+                pen.forward(width)
+                pen.right(90)
+                pen.forward(height)
+                pen.right(90)
+            pen.end_fill()
+
+        for rect in list_rectangles:
+            draw_shape(pen, rect.x, -rect.y, rect.width, rect.height,\
+                     "blue")
+
+        for square in list_squares:
+            draw_shape(pen, square.x, -square.y, square.size, square.size, "red")
+
+        turtle.done()
