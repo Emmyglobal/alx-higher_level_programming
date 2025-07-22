@@ -41,7 +41,17 @@ class BaseTest(unittest.TestCase):
         expected_ids = list(range(1, 6))
         self.assertEqual([obj.id for obj in instances], expected_ids)
 
+    def test_none_input(self):
+        self.assertEqual(Base.to_json_string(None), "[]")
 
+    def test_empty_list(self):
+        self.assertEqual(Base.to_json_string([]), "[]")
+
+    def test_single_dict(self):
+        self.assertEqual(
+            Base.to_json_string([{'id': 1, 'size': 5}]),
+            '[{"id": 1, "size": 5}]'
+        )
 
 
 
