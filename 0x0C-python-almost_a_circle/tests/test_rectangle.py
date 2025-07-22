@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """test for rectangle"""
 import unittest
+import sys
 from io import StringIO
 from unittest.mock import patch
 from models.rectangle import Rectangle
@@ -111,7 +112,68 @@ class TestRectangle(unittest.TestCase):
         with patch("sys.stdout", new=StringIO()) as fake_out:
             r.display()
             self.assertEqual(fake_out.getvalue(), "#\n")
-        
+       
+    def test_str_method(self):
+        r = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(str(r), "[Rectangle] (12) 2/1 - 4/6")
+
+    def test_display_without_xy(self):
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        Rectangle(2, 3).display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), "##\n##\n##\n")
+
+    def test_display_with_xy(self):
+        r = Rectangle(2, 2, 2, 2)
+        captured = StringIO()
+        sys.stdout = captured
+        r.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured.getvalue(), "\n\n  ##\n  ##\n")
+
+    def test_output(self):
+        r = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(str(r), "[Rectangle] (12) 2/1 - 4/6")
+
+    def test_zero_position(self):
+        r = Rectangle(4, 6, 0, 0, 12)
+        self.assertEqual(str(r), "[Rectangle] (12) 0/0 - 4/6")
+
+    def test_update_args(self):
+        r = Rectangle(1, 2, 3, 4, 10)
+        r.update(89, 4, 5, 6, 7)
+        self.assertEqual(str(r), "[Rectangle] (89) 6/7 - 4/5")
+
+    def test_update_with_fewer_position(self):
+        r = Rectangle(1, 1, 1, 1, 5)
+        r.update(99, 10)
+        self.assertEqual(str(r), "[Rectangle] (99) 1/1 - 10/1")
+
+    def test_with_key_args(self):
+        r = Rectangle(1, 2, 3, 4, 8)
+        r.update(height=10, width=20, y=5)
+        self.assertEqual(str(r), "[Rectangle] (8) 3/5 - 20/10")
+
+    def test_with_extra_key_args(self):
+        r = Rectangle(2, 2, 0, 0, 99)
+        r.update(a=1, width=5)
+        self.assertEqual(str(r), "[Rectangle] (99) 0/0 - 5/2")
+
+    def test_args_takes_precedence(self):
+        r = Rectangle(2, 3, 1, 1, 100)
+        r.update(200, 10, 10, 0, 0, height=50)
+        self.assertEqual(str(r), "[Rectangle] (200) 0/0 - 10/10")
+
+    def test_no_args_or_kwargs(self):
+        r = Rectangle(5, 5, 2, 2, 300)
+        r.update()
+        self.assertEqual(str(r), "[Rectangle] (300) 2/2 - 5/5")
+
+    def test_dictionary(self):
+        r = Rectangle(10, 2, 1, 9)
+        result = {'width': 10, 'x': 1, 'y': 9, 'height': 2, 'id': 2}
+        self.assertEqual(r.to_dictionary(), result)
 
 if __name__ == '__main__':
     unittest.main()
