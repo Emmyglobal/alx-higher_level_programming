@@ -1,2 +1,3 @@
--- Prints the full description of the table first_table
-SELECT * FROM first_table;
+-- Full description of first_table from the given database
+-- without using DESCRIBE or EXPLAIN
+SHOW CREATE TABLE first_table;
