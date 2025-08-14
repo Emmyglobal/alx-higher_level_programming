@@ -1,5 +1,7 @@
 # 0x0E. SQL - More queries
 
+## SQL and MySQL DBMS
+
 ## GENERAL REQUIREMENTS
 
 - How to create a new MySQL user
