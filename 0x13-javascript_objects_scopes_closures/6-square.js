@@ -1,11 +1,19 @@
 #!/usr/bin/node
-/* class Square that defines a square and inherits from Square */
-module.exports = class Square extends require('./5-square.js') {
-  charPrint (c) {
-    if (c === undefined) {
-      this.print();
-    } else {
-      for (let i = 0; i < this.height; i++) console.log(c.repeat(this.width));
-    }
-  }
-};
+const Square1= require(`./5-square`);
+/* Class Square that inherits from Square class */
+module.exports = class Square extends Square1 {
+	charPrint(c) {
+		let row = "";
+		for (let i = 0; i < this.height; i++) {
+			for (let j = 0; j < this.height; j++) {
+				if (c == undefined) {
+					row += "x"
+				} else {
+					row += "C";
+				}
+			}
+			console.log(row);
+			row = "";
+		}
+	}
+}
