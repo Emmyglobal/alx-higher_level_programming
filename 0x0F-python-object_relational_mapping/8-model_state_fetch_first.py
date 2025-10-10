@@ -1,21 +1,35 @@
-#!/usr/bin/python3
-"""
- prints the first State object from the database hbtn_0e_6_usa
-"""
+#!/usr/bin/env python3
+""" prints the first state object from the database hbtn_0e_6_usa"""
+
 import sys
 from model_state import Base, State
-from sqlalchemy import (create_engine)
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
-    Base.metadata.create_all(engine)
+    """ collect the CLI arguments """
+    uname = sys.argv[1]
+    pword = sys.argv[2]
+    dbase = sys.argv[3]
+
+    """ create connection engine """
+    engine = create_engine(
+            f"mysql+mysqldb://{uname}:{pword}@localhost:3306/{dbase}",
+            pool_pre_ping=True
+            )
+
+    """ Bind engine to session """
     Session = sessionmaker(bind=engine)
     session = Session()
-    instance = session.query(State).first()
-    if instance is None:
-        print("Nothing")
+
+    """ Query all states ordered by id """
+    state = session.query(State).order_by(State.id).first()
+
+    """ print out """
+    if state:
+        print(f"{state.id}: {state.name}")
     else:
-        print(instance.id, instance.name, sep=": ")
+        print("Nothing")
+
+    session.close()

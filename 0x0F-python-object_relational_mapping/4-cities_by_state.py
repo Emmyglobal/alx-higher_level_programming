@@ -1,18 +1,36 @@
-#!/usr/bin/python3
-"""
-Script that lists all cities from the databases hbtn_0e_4_usa
-"""
-import MySQLdb
+#!/usr/bin/env python3
+""" A script that lists all cities from the database hbtn_0e_4_usa """
+
 import sys
+import MySQLdb
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
-                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    """ Access all input arguments """
+    username = sys.argv[1]
+    password = sys.argv[2]
+    name = sys.argv[3]
+
+    """connect to MySQLdb database"""
+    db = MySQLdb.connect(
+            host="localhost",
+            port=3306,
+            user=username,
+            passwd=password,
+            db=name
+            )
+
+    """ cursor """
     cur = db.cursor()
-    cur.execute("""SELECT cities.id, cities.name, states.name FROM
-                cities INNER JOIN states ON states.id=cities.state_id""")
+
+    """Execute SQL commands """
+    cur.execute(
+            "SELECT id, name FROM cities ORDER BY id ASC"
+            )
+
     rows = cur.fetchall()
-    for i in rows:
-        print(i)
+
+    for row in rows:
+        print(row)
+
     cur.close()
     db.close()
